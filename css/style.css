@@ -24,7 +24,7 @@ html{
     --fontWeight-medium: 500;
     --fontWeight-semiBold: 600;
 }
-p{
+p, blockquote{
     font-size: var(--size-paragraph);
     font-weight: var(--fontWeight-medium);
 }
@@ -40,6 +40,15 @@ body{
     display: flex;
     flex-direction: column;
 }
+.sr-only {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
 .container-cards{
     width: 35rem;
     margin: auto;
@@ -58,9 +67,11 @@ body{
     padding: 3rem;
     transition: all 0.1s linear;
 }
-.card:hover{
-    transform: scale(102%);
-    box-shadow: 0 5px 15px var(--lightGray-font);
+@media (hover:hover){
+    .card:hover{
+        transform: scale(102%);
+        box-shadow: 0 5px 15px var(--lightGray-font);
+    }
 }
 .card-one{
     grid-area: one;
