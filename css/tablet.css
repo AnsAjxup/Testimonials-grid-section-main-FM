@@ -1,0 +1,14 @@
+.container-cards{
+    width: 70rem;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        "one one"
+        "two three"
+        "four four"
+        "five five";
+}
+.img-quotation{
+    right: 8rem;
+}

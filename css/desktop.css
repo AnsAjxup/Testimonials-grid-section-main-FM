@@ -1,0 +1,9 @@
+.container-cards{
+    width: 110rem;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "one one two five"
+        "three four four five";
+}

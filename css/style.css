@@ -5,25 +5,111 @@
 }
 html{
     font-size: 62.5%;
+    font-family: var(--BarlowSemi-fontFamily);
 }
 :root{
     /* Primary Colors */
     --moderateViolet-background: hsl(263, 55%, 52%);
-    --veryDarkGrayishBlue-background: hsl(217, 19%, 35%);
-    --veryDarkBlackishBlue-background-title: hsl(219, 29%, 14%);
+    --veryDarkGrayishBlue-background-font: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue-background: hsl(219, 29%, 14%);
     --white-background: hsl(0, 0%, 100%);
     /* Neutral Colors */
-    --lightGray-paragraph: hsl(0, 0%, 81%);
-    --lightGrayishBlue-background: hsl(210, 46%, 95%);
+    --lightGray-font: hsl(0, 0%, 81%);
+    --lightGrayishBlue-background-font: hsl(210, 46%, 95%);
     /* Typography */
     --BarlowSemi-fontFamily: 'Barlow Semi Condensed', sans-serif;
     --size-paragraph: 1.3rem;
-    --size-paragraphImportant: 2.4rem;
-    --size-title: 2rem;
+    --size-paragraphImportant: 2rem;
+    --size-title: 1.6rem;
     --fontWeight-medium: 500;
     --fontWeight-semiBold: 600;
 }
-
+p{
+    font-size: var(--size-paragraph);
+    font-weight: var(--fontWeight-medium);
+}
+h2{
+    font-size: var(--size-title);
+    font-weight: var(--fontWeight-semiBold);
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--lightGrayishBlue-background-font);
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.container-cards{
+    width: 35rem;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+    gap: 2rem;
+}
+.card{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 3rem;
+    transition: all 0.1s linear;
+}
+.card:hover{
+    transform: scale(102%);
+    box-shadow: 0 5px 15px var(--lightGray-font);
+}
+.card-one{
+    grid-area: one;
+    background-color: var(--moderateViolet-background);
+    position: relative;
+    color: var(--lightGrayishBlue-background-font);
+}
+.img-quotation{
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    z-index: 0;
+}
+.container-user{
+    width: 100%;
+    display: flex;
+}
+.img-perfil{
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid hsl(264deg 82% 70%);
+}
+.user-data{
+    margin-left: 1.5rem;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user-data__name{
+    color: inherit;
+}
+.user-data__verified{
+    color: inherit;
+    opacity: 50%;
+}
+.paragraph-important{
+    color: inherit;
+    font-size: var(--size-paragraphImportant);
+    font-weight: var(--fontWeight-semiBold);
+    position: relative;
+    margin: 1.5rem 0;
+    line-height: 2.8rem;
+}
+.card__paragraph{
+    color: inherit;
+    opacity: 70%;
+    line-height: 1.8rem;
+}
 /* Note for text colors:
 
 1. "Verified Graduate" has the same color as the person's name with 50% opacity
@@ -32,10 +118,37 @@ html{
 1. "Graduado verificado" tiene el mismo color que el nombre de la persona con un 50 % de opacidad
 2. Los párrafos de revisión dentro de las citas también tienen el mismo color, pero tienen una opacidad del 70 %.*/
 
+.card-two{
+    grid-area: two;
+    background-color: var(--veryDarkGrayishBlue-background-font);
+    color: var(--lightGrayishBlue-background-font);
+}
+.img-perfil--border{
+    border: none;
+}
+.card-three{
+    grid-area: three;
+    background-color: var(--white-background);
+    color: var(--veryDarkGrayishBlue-background-font);
+}
+.card-four{
+    grid-area: four;
+    background-color: var(--veryDarkBlackishBlue-background);
+    color: var(--lightGrayishBlue-background-font);
+}
+.card-five{
+    grid-area: five;
+    background-color: var(--white-background);
+    color: var(--veryDarkGrayishBlue-background-font);
+}
 
 
 
-
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution{
+    font-size: 11px;
+    text-align: center;
+    margin-top: 4rem;
+}
+.attribution a{
+    color: hsl(228, 45%, 44%);
+}
